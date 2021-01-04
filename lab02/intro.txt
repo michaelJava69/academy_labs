@@ -1,0 +1,7 @@
+testing
+
+lifecycle {
+    prevent_destroy = true
+  }
+
+Saying its provider specific

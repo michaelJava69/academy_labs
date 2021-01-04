@@ -1,0 +1,68 @@
+testing out 
+
+fmt
+  lits files changed
+  -list=false    will disable this list
+ 
+
+fmt -diff
+fmt -check
+
+                   output "content" {
+                   value=local_file.file.content
+                   description="the files content"
+                   }
+
+
+                  output "content" {
+                     value=local_file.file.content
+                     description="the files content"
+                  }
+
+
+validate
+     validate syntax errors first
+
+ main.tf             data "local_file" "2nd_file"
+                    { Filename = var.filename }
+
+   
+                    data "local_file" "2nd_file" { 
+                       Filename = var.filename 
+                    }
+
+
+     then requires provider to be downloaded
+     now it has the full picture as to what its target environment is it can carry out further validation
+
+ that we have not dclered a resouce call local_file.file
+
+
+
+wrong
+
+data "local_file" "file" {
+  Filename = var.filename
+}
+
+correct
+
+resource  "local_file" "file" {
+  filename = var.filename
+}
+
+
+
+correct
+
+variable filename {
+
+     decsription = "filename"
+}
+
+correct 
+
+variable "filename" {
+
+     decsription = "filename"
+}

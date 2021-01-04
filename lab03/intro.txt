@@ -1,0 +1,8 @@
+testing
+
+local_file resource
+sensitive content
+showingb terraform state contains the data even thoiugh can not disply it terraform programitaclly in output.tf
+
+wOULD LEAD ONTO DIScussion about storing state file ion S3 bucked indexed by using DynamoDB
+Backend state technology

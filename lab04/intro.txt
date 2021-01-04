@@ -1,0 +1,5 @@
+testing
+
+data resource 
+
+encoding exiting local_file usimng local provisioner
