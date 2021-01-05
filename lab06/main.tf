@@ -1,3 +1,2 @@
-resource "local_file" "file" {
-  filename = var.filename
-}
+resource "local_file" "2nd_file" 
+{ filename = var.filename }
