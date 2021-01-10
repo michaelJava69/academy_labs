@@ -11,7 +11,7 @@ variables
     ## 2. <filename>.auto.tfvars    : if can not find
     
     ## 3. terraform.tfvars
-          Environments variables
+          Environments variables  : TF_VARS_aws_instance="t2.micro"
     ## 4. default  in variables.tf file
 
     ## 5 .prompted
