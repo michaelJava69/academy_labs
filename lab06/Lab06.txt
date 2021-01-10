@@ -1,0 +1,77 @@
+Format and validate configuration files
+
+create main.tf as follows:
+
+data "local_file" "2nd_file"
+{ Filename = var.filename }
+
+
+
+create outputs.tf as follows:
+
+
+output "content" {
+value=local_file.file.content
+description="the files content"
+}
+
+
+create variables.tf as follows:
+
+variable filename {}
+
+
+terraform fmt -check                : { must start at same level as Block
+
+note syntax error in main.tf
+
+correct and re-run
+
+
+
+terraform fmt -check -diff
+
+note corrections being proposed - spacing, aligning equals signs
+diff universal format - as per git
+                                    : on output.tf
+
+
+
+terraform fmt
+
+note completed successfully
+note filenames output of files that were changes - -list=false would disable this
+note that files are updated by default
+
+
+
+terraform validate
+
+note invalid data source name error - must start with letter or underscore
+
+
+correct and rerun -    terraform validate 
+
+note initialization required
+                   note that terraform requires the provider to be able to validate the file
+
+
+
+terraform init
+
+note local provider downloaded
+
+
+
+terraform validate
+
+note errors
+note that fmt has only corrected formatting and basic syntax
+
+correct errors and re-run
+
+        change main.tf   ( data to resource / Filename to filename )
+
+note that plan or apply has not been run - i.e. no state is required
+
+note that filename variable was never prompted for
