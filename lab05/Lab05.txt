@@ -1,0 +1,144 @@
+Declare and use a variable
+
+Part A
+
+create main.tf as follows:
+
+resource "local_file" "this" {
+  filename = var.filename
+  content  = "A terraform created file"
+}
+
+create variables.tf as follows:
+
+variable "filename" {
+  description = "The filename to use"
+}
+
+
+
+terraform init
+
+note that the local provider is detected and downloaded
+
+
+
+terraform apply
+
+note prompted for variable
+note description is displayed
+provide value myinteractivetextfile.txt
+
+note plan Plan: 1 to add, 0 to change, 0 to destroy.
+
+and confirm
+verify file exists and contents
+
+
+
+terraform apply -var filename=myparametertextfile.txt
+
+note no variable prompt
+note plan Plan: 1 to add, 0 to change, 1 to destroy. - file will be replaced
+confirm and verify file exists and contents
+
+
+
+create myvarfile.tfvars as follows:
+
+
+filename = "myvarfiletextfile.txt"
+
+
+terraform apply -var-file myvarfile.tfvars
+
+note no variable prompt
+note plan Plan: 1 to add, 0 to change, 1 to destroy. - file will be replaced
+confirm and verify file exists and contents
+
+
+
+TF_VAR_filename=myenvtextfile.txt terraform apply
+
+note no variable prompt
+note plan Plan: 1 to add, 0 to change, 1 to destroy. - file will be replaced
+confirm and verify file exists and contents
+
+
+
+terraform destroy
+
+note prompted for filename but value is not used; old filename is in state
+explain variables need to be provided for refresh, plan, apply, destroy
+
+
+
+
+
+Part B
+
+
+rename myvarfile.tfvars to terraform.tfvars
+
+
+terraform init
+
+
+terraform apply
+
+note no variable prompt
+note plan and confirm and verify file contents
+
+
+
+rename the terraform.tfvars to avarfile.auto.tfvars
+
+
+terraform apply
+
+note no variable prompt
+note plan -- should not be any changes
+
+
+
+TF_VAR_filename=myenvfilename.txt terraform apply
+
+note no variable prompt
+note plan - no changes planned (is using value from avarfile.auto.tfvars)
+highlight that environment variable is being overridden
+
+
+
+terraform apply -var filename=myparametertext.file
+
+note no variable prompt
+note plan - file should be replaced with new name - -var has taken precedence
+
+
+
+terraform destroy
+
+
+
+Part C
+
+update variables.tf to include a default value:
+
+variable "filename" {
+  description = "The filename to use"
+  default     = "defaultfilename.txt"
+}
+
+
+terraform init
+
+
+terraform apply
+
+note should not prompt for value
+confirm and check result
+check with students to see if their default value was used - (did they leave the *.auto.tfvars file in place ?)
+
+
+
+terraform destroy
