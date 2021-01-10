@@ -1,0 +1,47 @@
+Set the prevent_destroy lifecycle meta-argument on a resource.
+
+create main.tf as follows:
+
+resource "local_file" "file01" {
+  filename = "file01.txt"
+  content  = "the first file"
+
+  lifecycle {
+    prevent_destroy = true
+  }
+}
+
+
+terraform init
+
+note that the local provider is detected and downloaded
+
+
+
+terraform apply
+
+note plan and confirm
+
+verify file has been created and the content....
+
+
+
+attempt to destroy the deployment    :   terraform destroy
+
+   note the error message
+
+
+
+update the content argument and attempt to     :  terraform apply
+
+note the error message
+
+
+The local provider is trying to destroy/create as per lab01
+Lifecycle implementation can be provider specific
+
+
+
+remove the lifecycle block and      :  terrform destroy
+
+verify that file has been removed
