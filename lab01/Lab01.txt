@@ -1,0 +1,86 @@
+Create a local file using terraform. A simple example to demonstrate core workflow.
+
+create main.tf as follows:
+
+resource "local_file" "hello" {
+  filename = "hello.txt"
+}
+
+Carry out a:- 
+
+terraform init
+
+Can you find the provider plugin ?
+Is it a deafult local_provider?
+
+
+
+terraform plan
+
+What does plan tell you ?
+What does the + indicator tell you?
+
+Note
+note plan summary Plan: 1 to add, 0 to change, 0 to destroy.
+
+
+
+
+terraform apply
+
+note plan is repeated; plan can be skipped when used interactively
+
+confirm by entering yes
+
+verify file has been created:     ls -l
+
+note 0 byte size; equivalent to touch
+
+
+
+
+step 2
+
+edit main.tf to add content attribute, as follows:
+
+
+resource "local_file" "hello" {
+  filename = "Hello.txt"
+  content = "Hello World!"
+}
+
+
+terraform apply
+
+note -/+ against resource name - indicates resource will be destroyed and then created
+note plan Plan: 1 to add, 0 to change, 1 to destroy.
+
+confirm application by entering yes
+
+verify that the contents of the file has changed - cat hello.txt
+
+
+
+step 3
+
+modify the contents of hello.txt and re-run terraform apply
+
+verify file contents has reverted - cat hello.txt
+
+
+
+step 4
+
+delete the hello.txt file and re-run terraform apply
+
+verify the file has been re-created
+
+
+
+
+terraform destroy
+
+note - against resource name - indicates resource will de destroyed
+note plan Plan: 0 to add, 0 to change, 1 to destroy.
+
+verify that file has been removed
