@@ -1,1 +1,77 @@
-Lab04 Data Source Michael
+Use a data source to query the content of a file
+
+Notes
+
+data resource queries the information in the provider environment. 
+
+This could be 
+
+AWS where provider is that for AWS
+Your local machine where provider  = local_provider
+
+
+create lab04.txt as follows:
+
+touch lab04.txt
+vi/nano lab04.txt 
+
+add content
+           Lab04 Data Source
+
+
+create main.tf as follows:
+
+data "local_file" "lab04" {
+  filename = "lab04.txt"
+}
+
+
+create outputs.tf as follows:
+
+output "file_content64" {
+  description = "The base64 encoded content of the file"
+  value       = data.local_file.lab04.content_base64
+}
+
+
+terraform init
+
+note that the local provider is detected and downloaded
+
+
+
+terraform apply
+
+
+note plan Plan: 0 to add, 0 to change, 0 to destroy. -- no resources are being created
+
+Why ?
+
+    data resource only carries out a read
+
+
+and confirm
+
+
+highlight the outputs displayed on screen
+data.local_file.lab04: Refreshing state... [id=c4a1625ac8197ab26cc64761a06adc9e55c34f5a]
+
+
+Outputs:
+
+should be :
+
+file_content64 = TGFiMDQgRGF0YSBTb3VyY2VzCg==
+
+
+Next
+
+update the contents of lab04.txt
+
+nano/vi lab04.txt
+
+update the state using command :             terraform refresh
+
+note the new command
+note the updated output value
+re-iterate that data sources are retrieved in the 'refresh' phase unless they cannot be calculated until a resource is applied
