@@ -1,0 +1,175 @@
+Create a local file using terraform. A simple example to demonstrate core workflow.
+
+create main.tf as follows:
+
+resource "local_file" "file-default" {
+  filename = "example-file-in-workspace"
+  content  = "Workspace world"
+}
+
+However manipulate file name so that the file name contains the workspace in its name
+
+
+
+Carry out a:- 
+
+terraform init
+
+Can you find the provider plugin ?
+Is it a deafult local_provider?
+
+
+
+terraform plan
+
+What does plan tell you ?
+What does the + indicator tell you?
+Does the filename contain the workspace and what is the workspace
+
+Note
+note plan summary Plan: 1 to add, 0 to change, 0 to destroy.
+
+
+
+
+terraform apply
+
+note plan is repeated; plan can be skipped when used interactively
+
+confirm by entering yes
+
+verify file has been created:     ls -l
+
+
+
+
+
+step 2
+------
+
+
+
+Change the content of the file to include text "This file is in the <name of work space > world
+
+
+terraform plan
+
+What does plan tell you ?
+What does the + indicator tell you?
+Does the filename contain the workspace and what is the workspace
+
+Note
+note plan summary Plan: 1 to add, 0 to change, 0 to destroy.
+
+
+
+
+terraform apply
+
+note plan is repeated; plan can be skipped when used interactively
+
+confirm by entering yes
+
+verify file has been created:     ls -l
+
+
+
+
+
+
+Step 3   : More workspaces please
+------
+
+
+
+Create a dev workspace        :  
+
+      Check which workspace you are in....     terraform workspace list   check for *
+
+Create a sit workspace
+      Check which workspace you are in....     terraform workspace list   check for *
+
+Create a prod workspace
+      Check which workspace you are in....     terraform workspace list   check for *
+
+
+
+
+
+
+Step 4
+------ 
+
+
+      Switch to dev workspace please   ....       
+
+
+create main.tf as follows:        [ OR DO YOU NEED TO CREATE ANOTHER MAIN file?  ]
+
+resource "local_file" "file-default" {
+  filename = "example-file-in-workspace"
+  content  = "Workspace world"
+}
+
+However
+-------
+ 
+manipulate file name so that the file name contains the workspace in its name
+Change the content of the file to include text "This file is in the <name of work space > world
+
+
+Plan the file  :     terraform plan
+
+What does plan tell you ?
+What does the + indicator tell you?
+Does the filename contain the workspace and what is the workspace
+
+Note
+note plan summary Plan: 1 to add, 0 to change, 0 to destroy.
+
+
+
+
+Create the file    : terraform apply    [ HOWEVER THIS TIME USE FLAG TO PREVENT INTERACTIVE QUESTION]   
+
+ 
+
+verify file has been created:     ls -l
+
+
+
+Step 5
+------
+
+Carry out Step4 for for the sit and Prod environments
+
+
+How many files do you have in your local file system
+What are thier names?
+
+
+Step 6
+------
+
+Go and delete all the files using terraform destroy please  [ DO NOT DELETE THEM MANUALLY ]
+
+
+
+Step 7
+------
+
+Switch to the dev workspace 
+
+Try to delete the dev workspace
+
+		Do you get an error message
+
+Okay switch to the deafult workspace
+
+Delete all your workspaces
+
+
+Check that all workspaces have been deleted
+
+--------------------
+End
