@@ -1,0 +1,73 @@
+Define outputs for a resource.
+
+create main.tf as follows:
+
+resource "local_file" "example" {
+  filename = "example.txt"
+  content  = "The quick brown fox jumps over the lazy dog"
+}
+
+create outputs.tf as follows:
+
+output "file_id" {
+  description = "The ID of the example file"
+  value       = local_file.example.id
+}
+
+
+
+output "file_content" {
+  description = "The contents of the example file"
+  value       = local_file.example.content
+  sensitive   = true
+}
+
+
+terraform init
+
+note that the local provider is detected and downloaded
+
+
+
+terraform apply
+
+note plan and confirm
+verify file has been created and the content
+highlight the outputs displayed on screen
+
+
+Is the file_id displayed  ?
+Is the file content displayed ?
+
+
+
+Display the outputs using terraform output
+
+note output format
+note that file_content is displayed <sensitive>
+
+
+Results come from State file however file content prevented from being displayed
+
+terraform show
+cat terraform.tfstate
+
+explain the results are coming from state file (without going into detail)
+
+
+
+display only the file id terraform output file_id
+
+note output format
+
+
+
+display only the file id terraform output file_content
+
+note actual file contents is displayed
+explain that content is stored in state !
+
+< Forces the output by specifically calling >
+
+
+terraform destroy
