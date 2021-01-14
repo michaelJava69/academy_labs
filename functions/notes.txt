@@ -1,0 +1,24 @@
+###
+Format
+############
+
+
+# Add a map of standards tags for this resource to a map of tags passed into the module:
+  tags = "${merge(
+     map(
+      "Name",  "${format("%s-%s%s",local.role, local.environment, ( var.desired_capacity > 1 && var.enable_suffix ? "-${count.index + 1}" : "")
+        )
+      }",
+      "${var.vault_tag_name}", "${var.vault_tag_value}"
+     ),
+    var.tags
+  )}"
+
+
+
+
+
+regex("^(?:(?P<scheme>[^;]*);)?(?://(?P<authority>[^/]*))", "https;//terraform.io.au/docs/")
+{
+  "authority" = "terraform.io.au"
+  "scheme" = "https"

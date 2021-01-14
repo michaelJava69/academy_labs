@@ -1,0 +1,51 @@
+
+Provisioners v User Data
+
+
+There are 2 different ways to execute o a server using Terraform
+
+1   Remote exec
+
+    Type : shell, ansible, puppet, chef
+    Unlimited length  : howvever with geraet flexibility comes greate disadvantages
+    
+
+2 User Data Scripts
+
+D
+  limited in size to 16 KB
+  Does not have facility to run Ansible, Chef, Puppet   
+
+A
+  ASG
+  Runs after resource deployed and works well with ASG  handling auto reload events
+    - Remote Exec provisioners can not becuase they run only once when Terraform is running
+  
+  SECURITY
+  User data requires only the AWS API  and no SSH keys therefor its more secure
+    - Remote Exec does require opening SSH and WinRM  to access servers
+      More complicated to manage these keys/ less secure 
+
+  DEBUGGING
+  User Data logs can be seen in EC2 Console   Actions - Instance Settings View/Change User Data
+  
+  Log : if you ssh onto the EC2 box : go to /var/log/cloud-init*.log
+ 
+    - Provisioners can not
+       
+
+
+Notes
+-----
+
+get public key from pem file  (created keys as pem you see in AWS console up front)
+https://docs.jamcracker.com/latest/Knowledge%20Hub/topic/public_key.html
+
+bookmarks  terraform / chapter5 /
+
+
+Log onto server 
+---------------
+
+ssh -i ~/certification/keypair/chapter5.pem ec2-user@18.224.1.181
+Rem to open up port 22 or create security rules for the instance up front
