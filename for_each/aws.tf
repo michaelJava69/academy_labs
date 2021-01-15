@@ -42,11 +42,16 @@ resource "aws_instance" "ec2"  {
   ## for_each = toset(data.aws_availability_zones.azs.names)
   ##   availability_zone = each.value
 
+/*
   for_each = {
        for key, value in local.myfilter2 :
        key => value
   }
- 
+ */
+
+  for_each = local.myfilter2
+
+
   availability_zone = each.value 
 
   tags ={
@@ -54,6 +59,23 @@ resource "aws_instance" "ec2"  {
   }
 
 }
+
+
+
+resource "aws_subnet" "sub"  {
+
+    for_each = {us-east-2a="172.20.10.0/24",us-east-2b="172.20.20.0/24",us-east-2c="172.20.30.0/24"}
+
+    cidr_block = each.value
+    vpc_id = "123456"
+    availability_zone = each.key
+
+    tags = {
+       zone = "subnet-${each.key}
+    }
+}
+
+
 
 /*
 
