@@ -57,7 +57,6 @@ data "aws_ami" "amazonlinux" {
  }
 
 /*
-
   dynamic "filter"{
 
     for_each = local.datafilter
@@ -67,7 +66,6 @@ data "aws_ami" "amazonlinux" {
       values = [filter.value.value]
     }
   }
-
 
 */
 
@@ -84,7 +82,6 @@ data "aws_ami" "amazonlinux" {
     name   = "name"
     values = ["amzn2-ami-hvm-2.0*"]
   }
-
 
   filter {
 
