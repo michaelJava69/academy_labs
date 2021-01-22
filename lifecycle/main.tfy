@@ -1,0 +1,8 @@
+
+resource "aws_instance" "instance" {
+
+ 
+  ami      = data.aws_ami.amazonlinux.id 
+  ## instance_type = "t2.micro"
+  instance_type = [for e in var.type : lower(e)] 
+}

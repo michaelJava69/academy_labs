@@ -1,0 +1,542 @@
+2021/01/22 16:17:42 [INFO] Terraform version: 0.12.19  
+2021/01/22 16:17:42 [INFO] Go runtime version: go1.12.13
+2021/01/22 16:17:42 [INFO] CLI args: []string{"/usr/local/Cellar/tfenv/2.0.0/versions/0.12.19/terraform", "plan"}
+2021/01/22 16:17:42 [DEBUG] Attempting to open CLI config file: /Users/michaelugbechie/.terraformrc
+2021/01/22 16:17:42 [DEBUG] File doesn't exist, but doesn't need to. Ignoring.
+2021/01/22 16:17:42 [INFO] CLI command args: []string{"plan"}
+2021/01/22 16:17:42 [TRACE] Meta.Backend: no config given or present on disk, so returning nil config
+2021/01/22 16:17:42 [TRACE] Meta.Backend: backend has not previously been initialized in this working directory
+2021/01/22 16:17:42 [DEBUG] New state was assigned lineage "19be659e-0a6f-0e4f-cac7-cc2dc2e0f0c4"
+2021/01/22 16:17:42 [TRACE] Meta.Backend: using default local state only (no backend configuration, and no existing initialized backend)
+2021/01/22 16:17:42 [TRACE] Meta.Backend: instantiated backend of type <nil>
+2021/01/22 16:17:42 [DEBUG] checking for provider in "."
+2021/01/22 16:17:42 [DEBUG] checking for provider in "/usr/local/Cellar/tfenv/2.0.0/versions/0.12.19"
+2021/01/22 16:17:42 [DEBUG] checking for provider in ".terraform/plugins/darwin_amd64"
+2021/01/22 16:17:42 [DEBUG] found provider "terraform-provider-aws_v2.70.0_x4"
+2021/01/22 16:17:42 [DEBUG] found provider "terraform-provider-azurerm_v2.44.0_x5"
+2021/01/22 16:17:42 [DEBUG] found provider "terraform-provider-external_v2.0.0_x5"
+2021/01/22 16:17:42 [DEBUG] found valid plugin: "aws", "2.70.0", "/Users/michaelugbechie/workspace/terraform-academy/academy_labs/crash/.terraform/plugins/darwin_amd64/terraform-provider-aws_v2.70.0_x4"
+2021/01/22 16:17:42 [DEBUG] found valid plugin: "azurerm", "2.44.0", "/Users/michaelugbechie/workspace/terraform-academy/academy_labs/crash/.terraform/plugins/darwin_amd64/terraform-provider-azurerm_v2.44.0_x5"
+2021/01/22 16:17:42 [DEBUG] found valid plugin: "external", "2.0.0", "/Users/michaelugbechie/workspace/terraform-academy/academy_labs/crash/.terraform/plugins/darwin_amd64/terraform-provider-external_v2.0.0_x5"
+2021/01/22 16:17:42 [DEBUG] checking for provisioner in "."
+2021/01/22 16:17:42 [DEBUG] checking for provisioner in "/usr/local/Cellar/tfenv/2.0.0/versions/0.12.19"
+2021/01/22 16:17:42 [DEBUG] checking for provisioner in ".terraform/plugins/darwin_amd64"
+2021/01/22 16:17:42 [TRACE] Meta.Backend: backend <nil> does not support operations, so wrapping it in a local backend
+2021/01/22 16:17:42 [INFO] backend/local: starting Plan operation
+2021/01/22 16:17:42 [TRACE] backend/local: requesting state manager for workspace "default"
+2021/01/22 16:17:42 [TRACE] backend/local: state manager for workspace "default" will:
+ - read initial snapshot from terraform.tfstate
+ - write new snapshots to terraform.tfstate
+ - create any backup at terraform.tfstate.backup
+2021/01/22 16:17:42 [TRACE] backend/local: requesting state lock for workspace "default"
+2021/01/22 16:17:42 [TRACE] statemgr.Filesystem: preparing to manage state snapshots at terraform.tfstate
+2021/01/22 16:17:42 [TRACE] statemgr.Filesystem: existing snapshot has lineage "553a4619-e134-7402-223a-7a420cba444d" serial 62
+2021/01/22 16:17:42 [TRACE] statemgr.Filesystem: locking terraform.tfstate using fcntl flock
+2021/01/22 16:17:42 [TRACE] statemgr.Filesystem: writing lock metadata to .terraform.tfstate.lock.info
+2021/01/22 16:17:42 [TRACE] backend/local: reading remote state for workspace "default"
+2021/01/22 16:17:42 [TRACE] statemgr.Filesystem: reading latest snapshot from terraform.tfstate
+2021/01/22 16:17:42 [TRACE] statemgr.Filesystem: read snapshot with lineage "553a4619-e134-7402-223a-7a420cba444d" serial 62
+2021/01/22 16:17:42 [TRACE] backend/local: retrieving local state snapshot for workspace "default"
+2021/01/22 16:17:42 [TRACE] backend/local: building context for current working directory
+2021/01/22 16:17:42 [TRACE] terraform.NewContext: starting
+2021/01/22 16:17:42 [TRACE] terraform.NewContext: resolving provider version selections
+2021/01/22 16:17:43 [TRACE] terraform.NewContext: loading provider schemas
+2021/01/22 16:17:43 [TRACE] LoadSchemas: retrieving schema for provider type "aws"
+2021-01-22T16:17:43.502Z [INFO]  plugin: configuring client automatic mTLS
+2021-01-22T16:17:43.523Z [DEBUG] plugin: starting plugin: path=/Users/michaelugbechie/workspace/terraform-academy/academy_labs/crash/.terraform/plugins/darwin_amd64/terraform-provider-aws_v2.70.0_x4 args=[/Users/michaelugbechie/workspace/terraform-academy/academy_labs/crash/.terraform/plugins/darwin_amd64/terraform-provider-aws_v2.70.0_x4]
+2021-01-22T16:17:43.530Z [DEBUG] plugin: plugin started: path=/Users/michaelugbechie/workspace/terraform-academy/academy_labs/crash/.terraform/plugins/darwin_amd64/terraform-provider-aws_v2.70.0_x4 pid=43008
+2021-01-22T16:17:43.531Z [DEBUG] plugin: waiting for RPC address: path=/Users/michaelugbechie/workspace/terraform-academy/academy_labs/crash/.terraform/plugins/darwin_amd64/terraform-provider-aws_v2.70.0_x4
+2021-01-22T16:17:44.673Z [INFO]  plugin.terraform-provider-aws_v2.70.0_x4: configuring server automatic mTLS: timestamp=2021-01-22T16:17:44.673Z
+2021-01-22T16:17:44.696Z [DEBUG] plugin: using plugin: version=5
+2021-01-22T16:17:44.696Z [DEBUG] plugin.terraform-provider-aws_v2.70.0_x4: plugin address: address=/var/folders/yr/9qk9x6nd3t78r184mcm12z5c0000gp/T/plugin055729879 network=unix timestamp=2021-01-22T16:17:44.696Z
+2021/01/22 16:17:44 [TRACE] GRPCProvider: GetSchema
+2021/01/22 16:17:44 [TRACE] GRPCProvider: Close
+2021-01-22T16:17:44.799Z [DEBUG] plugin: plugin process exited: path=/Users/michaelugbechie/workspace/terraform-academy/academy_labs/crash/.terraform/plugins/darwin_amd64/terraform-provider-aws_v2.70.0_x4 pid=43008
+2021-01-22T16:17:44.799Z [DEBUG] plugin: plugin exited
+2021/01/22 16:17:44 [TRACE] LoadSchemas: retrieving schema for provider type "azurerm"
+2021-01-22T16:17:44.799Z [INFO]  plugin: configuring client automatic mTLS
+2021-01-22T16:17:44.819Z [DEBUG] plugin: starting plugin: path=/Users/michaelugbechie/workspace/terraform-academy/academy_labs/crash/.terraform/plugins/darwin_amd64/terraform-provider-azurerm_v2.44.0_x5 args=[/Users/michaelugbechie/workspace/terraform-academy/academy_labs/crash/.terraform/plugins/darwin_amd64/terraform-provider-azurerm_v2.44.0_x5]
+2021-01-22T16:17:44.826Z [DEBUG] plugin: plugin started: path=/Users/michaelugbechie/workspace/terraform-academy/academy_labs/crash/.terraform/plugins/darwin_amd64/terraform-provider-azurerm_v2.44.0_x5 pid=43009
+2021-01-22T16:17:44.826Z [DEBUG] plugin: waiting for RPC address: path=/Users/michaelugbechie/workspace/terraform-academy/academy_labs/crash/.terraform/plugins/darwin_amd64/terraform-provider-azurerm_v2.44.0_x5
+2021/01/22 16:17:45 [ERR] Checkpoint error: Get https://checkpoint-api.hashicorp.com/v1/check/terraform?arch=amd64&os=darwin&signature=94d845e2-f8c3-57fb-f575-2c877030d683&version=0.12.19: net/http: request canceled while waiting for connection (Client.Timeout exceeded while awaiting headers)
+2021-01-22T16:17:45.854Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "EventHub"..
+2021-01-22T16:17:45.854Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "EventHub"..
+2021-01-22T16:17:45.854Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "Resources"..
+2021-01-22T16:17:45.854Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "Resources"..
+2021-01-22T16:17:45.854Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "Advisor"..
+2021-01-22T16:17:45.854Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "Advisor"..
+2021-01-22T16:17:45.854Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "Analysis Services"..
+2021-01-22T16:17:45.854Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "Analysis Services"..
+2021-01-22T16:17:45.854Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "API Management"..
+2021-01-22T16:17:45.854Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "API Management"..
+2021-01-22T16:17:45.855Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "App Configuration"..
+2021-01-22T16:17:45.855Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "App Configuration"..
+2021-01-22T16:17:45.855Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "Spring Cloud"..
+2021-01-22T16:17:45.855Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "Spring Cloud"..
+2021-01-22T16:17:45.855Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "Application Insights"..
+2021-01-22T16:17:45.855Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "Application Insights"..
+2021-01-22T16:17:45.855Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "Attestation"..
+2021-01-22T16:17:45.855Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "Attestation"..
+2021-01-22T16:17:45.855Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "Authorization"..
+2021-01-22T16:17:45.855Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "Authorization"..
+2021-01-22T16:17:45.855Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "Automation"..
+2021-01-22T16:17:45.855Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "Automation"..
+2021-01-22T16:17:45.856Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "Azure Stack HCI"..
+2021-01-22T16:17:45.856Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "Azure Stack HCI"..
+2021-01-22T16:17:45.856Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "Batch"..
+2021-01-22T16:17:45.856Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "Batch"..
+2021-01-22T16:17:45.856Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "Blueprints"..
+2021-01-22T16:17:45.856Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "Blueprints"..
+2021-01-22T16:17:45.856Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "Bot"..
+2021-01-22T16:17:45.857Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "Bot"..
+2021-01-22T16:17:45.857Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "CDN"..
+2021-01-22T16:17:45.857Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "CDN"..
+2021-01-22T16:17:45.858Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "Cognitive Services"..
+2021-01-22T16:17:45.858Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "Cognitive Services"..
+2021-01-22T16:17:45.858Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "Compute"..
+2021-01-22T16:17:45.859Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "Compute"..
+2021-01-22T16:17:45.859Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "Container Services"..
+2021-01-22T16:17:45.859Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "Container Services"..
+2021-01-22T16:17:45.860Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "CosmosDB"..
+2021-01-22T16:17:45.860Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "CosmosDB"..
+2021-01-22T16:17:45.860Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "Cost Management"..
+2021-01-22T16:17:45.860Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "Cost Management"..
+2021-01-22T16:17:45.860Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "Custom Providers"..
+2021-01-22T16:17:45.860Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "Custom Providers"..
+2021-01-22T16:17:45.860Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "DataBricks"..
+2021-01-22T16:17:45.860Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "DataBricks"..
+2021-01-22T16:17:45.860Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "Data Factory"..
+2021-01-22T16:17:45.860Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "Data Factory"..
+2021-01-22T16:17:45.861Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "Data Lake"..
+2021-01-22T16:17:45.861Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "Data Lake"..
+2021-01-22T16:17:45.861Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "Database Migration"..
+2021-01-22T16:17:45.861Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "Database Migration"..
+2021-01-22T16:17:45.861Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "Data Share"..
+2021-01-22T16:17:45.862Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "Data Share"..
+2021-01-22T16:17:45.862Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "Desktop Virtualization"..
+2021-01-22T16:17:45.862Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "Desktop Virtualization"..
+2021-01-22T16:17:45.863Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "DevSpaces"..
+2021-01-22T16:17:45.863Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "DevSpaces"..
+2021-01-22T16:17:45.863Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "Dev Test"..
+2021-01-22T16:17:45.863Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "Dev Test"..
+2021-01-22T16:17:45.863Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "Digital Twins"..
+2021-01-22T16:17:45.863Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "Digital Twins"..
+2021-01-22T16:17:45.863Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "DNS"..
+2021-01-22T16:17:45.863Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "DNS"..
+2021-01-22T16:17:45.863Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "EventGrid"..
+2021-01-22T16:17:45.863Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "EventGrid"..
+2021-01-22T16:17:45.864Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "EventHub"..
+2021-01-22T16:17:45.865Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "EventHub"..
+2021-01-22T16:17:45.866Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "Firewall"..
+2021-01-22T16:17:45.866Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "Firewall"..
+2021-01-22T16:17:45.866Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "FrontDoor"..
+2021-01-22T16:17:45.866Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "FrontDoor"..
+2021-01-22T16:17:45.866Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "HPC Cache"..
+2021-01-22T16:17:45.866Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "HPC Cache"..
+2021-01-22T16:17:45.866Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "Hardware Security Module"..
+2021-01-22T16:17:45.866Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "Hardware Security Module"..
+2021-01-22T16:17:45.866Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "HDInsight"..
+2021-01-22T16:17:45.866Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "HDInsight"..
+2021-01-22T16:17:45.866Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "Health Care"..
+2021-01-22T16:17:45.866Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "Health Care"..
+2021-01-22T16:17:45.866Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "IoT Hub"..
+2021-01-22T16:17:45.866Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "IoT Hub"..
+2021-01-22T16:17:45.867Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "IoT Central"..
+2021-01-22T16:17:45.867Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "IoT Central"..
+2021-01-22T16:17:45.867Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "KeyVault"..
+2021-01-22T16:17:45.867Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "KeyVault"..
+2021-01-22T16:17:45.867Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "Kusto"..
+2021-01-22T16:17:45.867Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "Kusto"..
+2021-01-22T16:17:45.867Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "Load Balancer"..
+2021-01-22T16:17:45.867Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "Load Balancer"..
+2021-01-22T16:17:45.867Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "Log Analytics"..
+2021-01-22T16:17:45.867Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "Log Analytics"..
+2021-01-22T16:17:45.868Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "Logic"..
+2021-01-22T16:17:45.868Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "Logic"..
+2021-01-22T16:17:45.868Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "Machine Learning"..
+2021-01-22T16:17:45.868Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "Machine Learning"..
+2021-01-22T16:17:45.868Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "Maintenance"..
+2021-01-22T16:17:45.868Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "Maintenance"..
+2021-01-22T16:17:45.868Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "Managed Applications"..
+2021-01-22T16:17:45.868Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "Managed Applications"..
+2021-01-22T16:17:45.868Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "Lighthouse"..
+2021-01-22T16:17:45.868Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "Lighthouse"..
+2021-01-22T16:17:45.868Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "Management Group"..
+2021-01-22T16:17:45.868Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "Management Group"..
+2021-01-22T16:17:45.868Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "Maps"..
+2021-01-22T16:17:45.868Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "Maps"..
+2021-01-22T16:17:45.868Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "MariaDB"..
+2021-01-22T16:17:45.868Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "MariaDB"..
+2021-01-22T16:17:45.868Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "Media"..
+2021-01-22T16:17:45.868Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "Media"..
+2021-01-22T16:17:45.870Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "Mixed Reality"..
+2021-01-22T16:17:45.870Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "Mixed Reality"..
+2021-01-22T16:17:45.870Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "Monitor"..
+2021-01-22T16:17:45.870Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "Monitor"..
+2021-01-22T16:17:45.870Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "Managed Service Identities"..
+2021-01-22T16:17:45.870Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "Managed Service Identities"..
+2021-01-22T16:17:45.870Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "Microsoft SQL Server / SQL Azure"..
+2021-01-22T16:17:45.870Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "Microsoft SQL Server / SQL Azure"..
+2021-01-22T16:17:45.871Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "MySQL"..
+2021-01-22T16:17:45.871Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "MySQL"..
+2021-01-22T16:17:45.871Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "NetApp"..
+2021-01-22T16:17:45.871Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "NetApp"..
+2021-01-22T16:17:45.871Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "Network"..
+2021-01-22T16:17:45.871Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "Network"..
+2021-01-22T16:17:45.873Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "Notification Hub"..
+2021-01-22T16:17:45.873Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "Notification Hub"..
+2021-01-22T16:17:45.873Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "Policy"..
+2021-01-22T16:17:45.873Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "Policy"..
+2021-01-22T16:17:45.873Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "Portal"..
+2021-01-22T16:17:45.873Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "Portal"..
+2021-01-22T16:17:45.873Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "PostgreSQL"..
+2021-01-22T16:17:45.873Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "PostgreSQL"..
+2021-01-22T16:17:45.874Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "PowerBI"..
+2021-01-22T16:17:45.874Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "PowerBI"..
+2021-01-22T16:17:45.874Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "Private DNS"..
+2021-01-22T16:17:45.874Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "Private DNS"..
+2021-01-22T16:17:45.874Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "Recovery Services"..
+2021-01-22T16:17:45.874Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "Recovery Services"..
+2021-01-22T16:17:45.874Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "Redis"..
+2021-01-22T16:17:45.874Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "Redis"..
+2021-01-22T16:17:45.874Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "Relay"..
+2021-01-22T16:17:45.874Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "Relay"..
+2021-01-22T16:17:45.874Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "Resources"..
+2021-01-22T16:17:45.874Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "Resources"..
+2021-01-22T16:17:45.875Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "Search"..
+2021-01-22T16:17:45.875Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "Search"..
+2021-01-22T16:17:45.875Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "Security Center"..
+2021-01-22T16:17:45.875Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "Security Center"..
+2021-01-22T16:17:45.875Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "Sentinel"..
+2021-01-22T16:17:45.875Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "Sentinel"..
+2021-01-22T16:17:45.875Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "ServiceBus"..
+2021-01-22T16:17:45.875Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "ServiceBus"..
+2021-01-22T16:17:45.876Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "Service Fabric"..
+2021-01-22T16:17:45.876Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "Service Fabric"..
+2021-01-22T16:17:45.876Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "Service Fabric Mesh"..
+2021-01-22T16:17:45.876Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "Service Fabric Mesh"..
+2021-01-22T16:17:45.876Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "SignalR"..
+2021-01-22T16:17:45.876Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "SignalR"..
+2021-01-22T16:17:45.876Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "SQL"..
+2021-01-22T16:17:45.876Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "SQL"..
+2021-01-22T16:17:45.876Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "Storage"..
+2021-01-22T16:17:45.876Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "Storage"..
+2021-01-22T16:17:45.877Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "Stream Analytics"..
+2021-01-22T16:17:45.877Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "Stream Analytics"..
+2021-01-22T16:17:45.877Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "Subscription"..
+2021-01-22T16:17:45.877Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "Subscription"..
+2021-01-22T16:17:45.877Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "Synapse"..
+2021-01-22T16:17:45.877Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "Synapse"..
+2021-01-22T16:17:45.877Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "Time Series Insights"..
+2021-01-22T16:17:45.877Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "Time Series Insights"..
+2021-01-22T16:17:45.877Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "Traffic Manager"..
+2021-01-22T16:17:45.877Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "Traffic Manager"..
+2021-01-22T16:17:45.877Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Data Sources for "Web"..
+2021-01-22T16:17:45.878Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: [DEBUG] Registering Resources for "Web"..
+2021-01-22T16:17:45.879Z [INFO]  plugin.terraform-provider-azurerm_v2.44.0_x5: configuring server automatic mTLS: timestamp=2021-01-22T16:17:45.879Z
+2021-01-22T16:17:45.900Z [DEBUG] plugin: using plugin: version=5
+2021-01-22T16:17:45.900Z [DEBUG] plugin.terraform-provider-azurerm_v2.44.0_x5: plugin address: address=/var/folders/yr/9qk9x6nd3t78r184mcm12z5c0000gp/T/plugin228105852 network=unix timestamp=2021-01-22T16:17:45.900Z
+2021/01/22 16:17:45 [TRACE] GRPCProvider: GetSchema
+2021/01/22 16:17:45 [TRACE] GRPCProvider: Close
+2021-01-22T16:17:45.989Z [DEBUG] plugin: plugin process exited: path=/Users/michaelugbechie/workspace/terraform-academy/academy_labs/crash/.terraform/plugins/darwin_amd64/terraform-provider-azurerm_v2.44.0_x5 pid=43009
+2021-01-22T16:17:45.989Z [DEBUG] plugin: plugin exited
+2021/01/22 16:17:45 [TRACE] LoadSchemas: retrieving schema for provider type "external"
+2021-01-22T16:17:45.990Z [INFO]  plugin: configuring client automatic mTLS
+2021-01-22T16:17:46.011Z [DEBUG] plugin: starting plugin: path=/Users/michaelugbechie/workspace/terraform-academy/academy_labs/crash/.terraform/plugins/darwin_amd64/terraform-provider-external_v2.0.0_x5 args=[/Users/michaelugbechie/workspace/terraform-academy/academy_labs/crash/.terraform/plugins/darwin_amd64/terraform-provider-external_v2.0.0_x5]
+2021-01-22T16:17:46.015Z [DEBUG] plugin: plugin started: path=/Users/michaelugbechie/workspace/terraform-academy/academy_labs/crash/.terraform/plugins/darwin_amd64/terraform-provider-external_v2.0.0_x5 pid=43010
+2021-01-22T16:17:46.015Z [DEBUG] plugin: waiting for RPC address: path=/Users/michaelugbechie/workspace/terraform-academy/academy_labs/crash/.terraform/plugins/darwin_amd64/terraform-provider-external_v2.0.0_x5
+2021-01-22T16:17:46.235Z [INFO]  plugin.terraform-provider-external_v2.0.0_x5: configuring server automatic mTLS: timestamp=2021-01-22T16:17:46.235Z
+2021-01-22T16:17:46.263Z [DEBUG] plugin.terraform-provider-external_v2.0.0_x5: plugin address: address=/var/folders/yr/9qk9x6nd3t78r184mcm12z5c0000gp/T/plugin379459097 network=unix timestamp=2021-01-22T16:17:46.263Z
+2021-01-22T16:17:46.263Z [DEBUG] plugin: using plugin: version=5
+2021/01/22 16:17:46 [TRACE] GRPCProvider: GetSchema
+2021/01/22 16:17:46 [TRACE] GRPCProvider: Close
+2021-01-22T16:17:46.310Z [DEBUG] plugin: plugin process exited: path=/Users/michaelugbechie/workspace/terraform-academy/academy_labs/crash/.terraform/plugins/darwin_amd64/terraform-provider-external_v2.0.0_x5 pid=43010
+2021-01-22T16:17:46.310Z [DEBUG] plugin: plugin exited
+2021/01/22 16:17:46 [TRACE] terraform.NewContext: complete
+2021/01/22 16:17:46 [TRACE] backend/local: finished building terraform.Context
+2021/01/22 16:17:46 [TRACE] backend/local: requesting interactive input, if necessary
+2021/01/22 16:17:46 [TRACE] Context.Input: Prompting for provider arguments
+2021/01/22 16:17:46 [TRACE] Context.Input: Provider provider.aws declared at provider.tf:1,1-15
+2021/01/22 16:17:46 [TRACE] Context.Input: Provider provider.aws.califonia declared at provider.tf:9,1-15
+2021/01/22 16:17:46 [TRACE] Context.Input: Provider provider.azurerm declared at provider.tf:15,1-19
+2021/01/22 16:17:46 [TRACE] Context.Input: Provider provider.external implied by data block at data_sources.tf:12,1-23
+2021/01/22 16:17:46 [TRACE] Context.Input: Input for provider.aws: map[string]cty.Value{}
+2021/01/22 16:17:46 [TRACE] Context.Input: Input for provider.aws.califonia: map[string]cty.Value{}
+2021/01/22 16:17:46 [TRACE] Context.Input: Input for provider.azurerm: map[string]cty.Value{}
+2021/01/22 16:17:46 [TRACE] Context.Input: Input for provider.external: map[string]cty.Value{}
+2021/01/22 16:17:46 [TRACE] backend/local: running validation operation
+2021/01/22 16:17:46 [INFO] terraform: building graph: GraphTypeValidate
+2021/01/22 16:17:46 [TRACE] Executing graph transform *terraform.ConfigTransformer
+2021/01/22 16:17:46 [TRACE] ConfigTransformer: Starting for path: 
+2021/01/22 16:17:46 [TRACE] Completed graph transform *terraform.ConfigTransformer with new graph:
+  aws_iam_user.user - *terraform.NodeValidatableResource
+  aws_instance.instance - *terraform.NodeValidatableResource
+  aws_security_grop.fw - *terraform.NodeValidatableResource
+  data.aws_ami.amazonlinux - *terraform.NodeValidatableResource
+  data.aws_availability_zones.azs - *terraform.NodeValidatableResource
+  data.external.echo - *terraform.NodeValidatableResource
+  ------
+2021/01/22 16:17:46 [TRACE] Executing graph transform *terraform.LocalTransformer
+2021/01/22 16:17:46 [TRACE] Completed graph transform *terraform.LocalTransformer with new graph:
+  aws_iam_user.user - *terraform.NodeValidatableResource
+  aws_instance.instance - *terraform.NodeValidatableResource
+  aws_security_grop.fw - *terraform.NodeValidatableResource
+  data.aws_ami.amazonlinux - *terraform.NodeValidatableResource
+  data.aws_availability_zones.azs - *terraform.NodeValidatableResource
+  data.external.echo - *terraform.NodeValidatableResource
+  local.datafilter - *terraform.NodeLocal
+  local.ingress_config - *terraform.NodeLocal
+  local.ingress_config2 - *terraform.NodeLocal
+  ------
+2021/01/22 16:17:46 [TRACE] Executing graph transform *terraform.OutputTransformer
+2021/01/22 16:17:46 [TRACE] Completed graph transform *terraform.OutputTransformer (no changes)
+2021/01/22 16:17:46 [TRACE] Executing graph transform *terraform.OrphanResourceInstanceTransformer
+2021/01/22 16:17:46 [TRACE] Completed graph transform *terraform.OrphanResourceInstanceTransformer (no changes)
+2021/01/22 16:17:46 [TRACE] Executing graph transform *terraform.StateTransformer
+2021/01/22 16:17:46 [TRACE] StateTransformer: state is empty, so nothing to do
+2021/01/22 16:17:46 [TRACE] Completed graph transform *terraform.StateTransformer (no changes)
+2021/01/22 16:17:46 [TRACE] Executing graph transform *terraform.OrphanOutputTransformer
+2021/01/22 16:17:46 [TRACE] Completed graph transform *terraform.OrphanOutputTransformer (no changes)
+2021/01/22 16:17:46 [TRACE] Executing graph transform *terraform.AttachResourceConfigTransformer
+2021/01/22 16:17:46 [TRACE] AttachResourceConfigTransformer: attaching to "aws_security_grop.fw" (*terraform.NodeValidatableResource) config from main.tf:73,1-34
+2021/01/22 16:17:46 [TRACE] AttachResourceConfigTransformer: attaching to "data.aws_ami.amazonlinux" (*terraform.NodeValidatableResource) config from hcl.Range{Filename:"data_sources.tf", Start:hcl.Pos{Line:29, Column:1, Byte:401}, End:hcl.Pos{Line:29, Column:29, Byte:429}}
+2021/01/22 16:17:46 [TRACE] AttachResourceConfigTransformer: attaching to "data.aws_availability_zones.azs" (*terraform.NodeValidatableResource) config from hcl.Range{Filename:"data_sources.tf", Start:hcl.Pos{Line:1, Column:1, Byte:0}, End:hcl.Pos{Line:1, Column:36, Byte:35}}
+2021/01/22 16:17:46 [TRACE] AttachResourceConfigTransformer: attaching to "aws_instance.instance" (*terraform.NodeValidatableResource) config from main.tf:2,1-35
+2021/01/22 16:17:46 [TRACE] AttachResourceConfigTransformer: attaching to "aws_iam_user.user" (*terraform.NodeValidatableResource) config from main.tf:51,1-32
+2021/01/22 16:17:46 [TRACE] AttachResourceConfigTransformer: attaching to "data.external.echo" (*terraform.NodeValidatableResource) config from hcl.Range{Filename:"data_sources.tf", Start:hcl.Pos{Line:12, Column:1, Byte:134}, End:hcl.Pos{Line:12, Column:23, Byte:156}}
+2021/01/22 16:17:46 [TRACE] Completed graph transform *terraform.AttachResourceConfigTransformer (no changes)
+2021/01/22 16:17:46 [TRACE] Executing graph transform *terraform.AttachStateTransformer
+2021/01/22 16:17:46 [TRACE] Completed graph transform *terraform.AttachStateTransformer (no changes)
+2021/01/22 16:17:46 [TRACE] Executing graph transform *terraform.RootVariableTransformer
+2021/01/22 16:17:46 [TRACE] Completed graph transform *terraform.RootVariableTransformer with new graph:
+  aws_iam_user.user - *terraform.NodeValidatableResource
+  aws_instance.instance - *terraform.NodeValidatableResource
+  aws_security_grop.fw - *terraform.NodeValidatableResource
+  data.aws_ami.amazonlinux - *terraform.NodeValidatableResource
+  data.aws_availability_zones.azs - *terraform.NodeValidatableResource
+  data.external.echo - *terraform.NodeValidatableResource
+  local.datafilter - *terraform.NodeLocal
+  local.ingress_config - *terraform.NodeLocal
+  local.ingress_config2 - *terraform.NodeLocal
+  var.az - *terraform.NodeRootVariable
+  var.instance_security_group_name - *terraform.NodeRootVariable
+  var.ohio_azs - *terraform.NodeRootVariable
+  var.server_port - *terraform.NodeRootVariable
+  var.server_ssh - *terraform.NodeRootVariable
+  var.type - *terraform.NodeRootVariable
+  var.user - *terraform.NodeRootVariable
+  var.user_data - *terraform.NodeRootVariable
+  ------
+2021/01/22 16:17:46 [TRACE] Executing graph transform *terraform.MissingProvisionerTransformer
+2021/01/22 16:17:46 [TRACE] Completed graph transform *terraform.MissingProvisionerTransformer (no changes)
+2021/01/22 16:17:46 [TRACE] Executing graph transform *terraform.ProvisionerTransformer
+2021/01/22 16:17:46 [TRACE] Completed graph transform *terraform.ProvisionerTransformer (no changes)
+2021/01/22 16:17:46 [TRACE] Executing graph transform *terraform.ModuleVariableTransformer
+2021/01/22 16:17:46 [TRACE] Completed graph transform *terraform.ModuleVariableTransformer (no changes)
+2021/01/22 16:17:46 [TRACE] Executing graph transform *terraform.graphTransformerMulti
+2021/01/22 16:17:46 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ProviderConfigTransformer
+2021/01/22 16:17:46 [TRACE] ProviderConfigTransformer: attaching to "provider.azurerm" provider configuration from provider.tf:15,1-19
+2021/01/22 16:17:46 [TRACE] ProviderConfigTransformer: attaching to "provider.aws" provider configuration from provider.tf:1,1-15
+2021/01/22 16:17:46 [TRACE] ProviderConfigTransformer: attaching to "provider.aws.califonia" provider configuration from provider.tf:9,1-15
+2021/01/22 16:17:46 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ProviderConfigTransformer with new graph:
+  aws_iam_user.user - *terraform.NodeValidatableResource
+  aws_instance.instance - *terraform.NodeValidatableResource
+  aws_security_grop.fw - *terraform.NodeValidatableResource
+  data.aws_ami.amazonlinux - *terraform.NodeValidatableResource
+  data.aws_availability_zones.azs - *terraform.NodeValidatableResource
+  data.external.echo - *terraform.NodeValidatableResource
+  local.datafilter - *terraform.NodeLocal
+  local.ingress_config - *terraform.NodeLocal
+  local.ingress_config2 - *terraform.NodeLocal
+  provider.aws - *terraform.NodeApplyableProvider
+  provider.aws.califonia - *terraform.NodeApplyableProvider
+  provider.azurerm - *terraform.NodeApplyableProvider
+  var.az - *terraform.NodeRootVariable
+  var.instance_security_group_name - *terraform.NodeRootVariable
+  var.ohio_azs - *terraform.NodeRootVariable
+  var.server_port - *terraform.NodeRootVariable
+  var.server_ssh - *terraform.NodeRootVariable
+  var.type - *terraform.NodeRootVariable
+  var.user - *terraform.NodeRootVariable
+  var.user_data - *terraform.NodeRootVariable
+  ------
+2021/01/22 16:17:46 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.MissingProviderTransformer
+2021/01/22 16:17:46 [DEBUG] adding implicit provider configuration provider.external, implied first by data.external.echo
+2021/01/22 16:17:46 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.MissingProviderTransformer with new graph:
+  aws_iam_user.user - *terraform.NodeValidatableResource
+  aws_instance.instance - *terraform.NodeValidatableResource
+  aws_security_grop.fw - *terraform.NodeValidatableResource
+  data.aws_ami.amazonlinux - *terraform.NodeValidatableResource
+  data.aws_availability_zones.azs - *terraform.NodeValidatableResource
+  data.external.echo - *terraform.NodeValidatableResource
+  local.datafilter - *terraform.NodeLocal
+  local.ingress_config - *terraform.NodeLocal
+  local.ingress_config2 - *terraform.NodeLocal
+  provider.aws - *terraform.NodeApplyableProvider
+  provider.aws.califonia - *terraform.NodeApplyableProvider
+  provider.azurerm - *terraform.NodeApplyableProvider
+  provider.external - *terraform.NodeApplyableProvider
+  var.az - *terraform.NodeRootVariable
+  var.instance_security_group_name - *terraform.NodeRootVariable
+  var.ohio_azs - *terraform.NodeRootVariable
+  var.server_port - *terraform.NodeRootVariable
+  var.server_ssh - *terraform.NodeRootVariable
+  var.type - *terraform.NodeRootVariable
+  var.user - *terraform.NodeRootVariable
+  var.user_data - *terraform.NodeRootVariable
+  ------
+2021/01/22 16:17:46 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ProviderTransformer
+2021/01/22 16:17:46 [TRACE] ProviderTransformer: aws_iam_user.user is provided by provider.aws or inherited equivalent
+2021/01/22 16:17:46 [TRACE] ProviderTransformer: data.external.echo is provided by provider.external or inherited equivalent
+2021/01/22 16:17:46 [TRACE] ProviderTransformer: aws_instance.instance is provided by provider.aws or inherited equivalent
+2021/01/22 16:17:46 [TRACE] ProviderTransformer: aws_security_grop.fw is provided by provider.aws or inherited equivalent
+2021/01/22 16:17:46 [TRACE] ProviderTransformer: data.aws_ami.amazonlinux is provided by provider.aws or inherited equivalent
+2021/01/22 16:17:46 [TRACE] ProviderTransformer: data.aws_availability_zones.azs is provided by provider.aws or inherited equivalent
+2021/01/22 16:17:46 [TRACE] ProviderTransformer: exact match for provider.aws serving data.aws_ami.amazonlinux
+2021/01/22 16:17:46 [DEBUG] ProviderTransformer: "data.aws_ami.amazonlinux" (*terraform.NodeValidatableResource) needs provider.aws
+2021/01/22 16:17:46 [TRACE] ProviderTransformer: exact match for provider.aws serving data.aws_availability_zones.azs
+2021/01/22 16:17:46 [DEBUG] ProviderTransformer: "data.aws_availability_zones.azs" (*terraform.NodeValidatableResource) needs provider.aws
+2021/01/22 16:17:46 [TRACE] ProviderTransformer: exact match for provider.aws serving aws_iam_user.user
+2021/01/22 16:17:46 [DEBUG] ProviderTransformer: "aws_iam_user.user" (*terraform.NodeValidatableResource) needs provider.aws
+2021/01/22 16:17:46 [TRACE] ProviderTransformer: exact match for provider.external serving data.external.echo
+2021/01/22 16:17:46 [DEBUG] ProviderTransformer: "data.external.echo" (*terraform.NodeValidatableResource) needs provider.external
+2021/01/22 16:17:46 [TRACE] ProviderTransformer: exact match for provider.aws serving aws_instance.instance
+2021/01/22 16:17:46 [DEBUG] ProviderTransformer: "aws_instance.instance" (*terraform.NodeValidatableResource) needs provider.aws
+2021/01/22 16:17:46 [TRACE] ProviderTransformer: exact match for provider.aws serving aws_security_grop.fw
+2021/01/22 16:17:46 [DEBUG] ProviderTransformer: "aws_security_grop.fw" (*terraform.NodeValidatableResource) needs provider.aws
+2021/01/22 16:17:46 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ProviderTransformer with new graph:
+  aws_iam_user.user - *terraform.NodeValidatableResource
+    provider.aws - *terraform.NodeApplyableProvider
+  aws_instance.instance - *terraform.NodeValidatableResource
+    provider.aws - *terraform.NodeApplyableProvider
+  aws_security_grop.fw - *terraform.NodeValidatableResource
+    provider.aws - *terraform.NodeApplyableProvider
+  data.aws_ami.amazonlinux - *terraform.NodeValidatableResource
+    provider.aws - *terraform.NodeApplyableProvider
+  data.aws_availability_zones.azs - *terraform.NodeValidatableResource
+    provider.aws - *terraform.NodeApplyableProvider
+  data.external.echo - *terraform.NodeValidatableResource
+    provider.external - *terraform.NodeApplyableProvider
+  local.datafilter - *terraform.NodeLocal
+  local.ingress_config - *terraform.NodeLocal
+  local.ingress_config2 - *terraform.NodeLocal
+  provider.aws - *terraform.NodeApplyableProvider
+  provider.aws.califonia - *terraform.NodeApplyableProvider
+  provider.azurerm - *terraform.NodeApplyableProvider
+  provider.external - *terraform.NodeApplyableProvider
+  var.az - *terraform.NodeRootVariable
+  var.instance_security_group_name - *terraform.NodeRootVariable
+  var.ohio_azs - *terraform.NodeRootVariable
+  var.server_port - *terraform.NodeRootVariable
+  var.server_ssh - *terraform.NodeRootVariable
+  var.type - *terraform.NodeRootVariable
+  var.user - *terraform.NodeRootVariable
+  var.user_data - *terraform.NodeRootVariable
+  ------
+2021/01/22 16:17:46 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.PruneProviderTransformer
+2021/01/22 16:17:46 [DEBUG] pruning unused provider.aws.califonia
+2021/01/22 16:17:46 [DEBUG] pruning unused provider.azurerm
+2021/01/22 16:17:46 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.PruneProviderTransformer with new graph:
+  aws_iam_user.user - *terraform.NodeValidatableResource
+    provider.aws - *terraform.NodeApplyableProvider
+  aws_instance.instance - *terraform.NodeValidatableResource
+    provider.aws - *terraform.NodeApplyableProvider
+  aws_security_grop.fw - *terraform.NodeValidatableResource
+    provider.aws - *terraform.NodeApplyableProvider
+  data.aws_ami.amazonlinux - *terraform.NodeValidatableResource
+    provider.aws - *terraform.NodeApplyableProvider
+  data.aws_availability_zones.azs - *terraform.NodeValidatableResource
+    provider.aws - *terraform.NodeApplyableProvider
+  data.external.echo - *terraform.NodeValidatableResource
+    provider.external - *terraform.NodeApplyableProvider
+  local.datafilter - *terraform.NodeLocal
+  local.ingress_config - *terraform.NodeLocal
+  local.ingress_config2 - *terraform.NodeLocal
+  provider.aws - *terraform.NodeApplyableProvider
+  provider.external - *terraform.NodeApplyableProvider
+  var.az - *terraform.NodeRootVariable
+  var.instance_security_group_name - *terraform.NodeRootVariable
+  var.ohio_azs - *terraform.NodeRootVariable
+  var.server_port - *terraform.NodeRootVariable
+  var.server_ssh - *terraform.NodeRootVariable
+  var.type - *terraform.NodeRootVariable
+  var.user - *terraform.NodeRootVariable
+  var.user_data - *terraform.NodeRootVariable
+  ------
+2021/01/22 16:17:46 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ParentProviderTransformer
+2021/01/22 16:17:46 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ParentProviderTransformer (no changes)
+2021/01/22 16:17:46 [TRACE] Completed graph transform *terraform.graphTransformerMulti with new graph:
+  aws_iam_user.user - *terraform.NodeValidatableResource
+    provider.aws - *terraform.NodeApplyableProvider
+  aws_instance.instance - *terraform.NodeValidatableResource
+    provider.aws - *terraform.NodeApplyableProvider
+  aws_security_grop.fw - *terraform.NodeValidatableResource
+    provider.aws - *terraform.NodeApplyableProvider
+  data.aws_ami.amazonlinux - *terraform.NodeValidatableResource
+    provider.aws - *terraform.NodeApplyableProvider
+  data.aws_availability_zones.azs - *terraform.NodeValidatableResource
+    provider.aws - *terraform.NodeApplyableProvider
+  data.external.echo - *terraform.NodeValidatableResource
+    provider.external - *terraform.NodeApplyableProvider
+  local.datafilter - *terraform.NodeLocal
+  local.ingress_config - *terraform.NodeLocal
+  local.ingress_config2 - *terraform.NodeLocal
+  provider.aws - *terraform.NodeApplyableProvider
+  provider.external - *terraform.NodeApplyableProvider
+  var.az - *terraform.NodeRootVariable
+  var.instance_security_group_name - *terraform.NodeRootVariable
+  var.ohio_azs - *terraform.NodeRootVariable
+  var.server_port - *terraform.NodeRootVariable
+  var.server_ssh - *terraform.NodeRootVariable
+  var.type - *terraform.NodeRootVariable
+  var.user - *terraform.NodeRootVariable
+  var.user_data - *terraform.NodeRootVariable
+  ------
+2021/01/22 16:17:46 [TRACE] Executing graph transform *terraform.RemovedModuleTransformer
+2021/01/22 16:17:46 [TRACE] Completed graph transform *terraform.RemovedModuleTransformer (no changes)
+2021/01/22 16:17:46 [TRACE] Executing graph transform *terraform.AttachSchemaTransformer
+2021/01/22 16:17:46 [TRACE] AttachSchemaTransformer: attaching resource schema to aws_iam_user.user
+2021/01/22 16:17:46 [TRACE] AttachSchemaTransformer: attaching provider config schema to provider.aws
+2021/01/22 16:17:46 [TRACE] AttachSchemaTransformer: attaching resource schema to data.external.echo
+2021/01/22 16:17:46 [TRACE] AttachSchemaTransformer: attaching provider config schema to provider.external
+2021/01/22 16:17:46 [TRACE] AttachSchemaTransformer: attaching resource schema to aws_instance.instance
+2021/01/22 16:17:46 [ERROR] AttachSchemaTransformer: No resource schema available for aws_security_grop.fw
+2021/01/22 16:17:46 [TRACE] AttachSchemaTransformer: attaching resource schema to data.aws_ami.amazonlinux
+2021/01/22 16:17:46 [TRACE] AttachSchemaTransformer: attaching resource schema to data.aws_availability_zones.azs
+2021/01/22 16:17:46 [TRACE] Completed graph transform *terraform.AttachSchemaTransformer (no changes)
+2021/01/22 16:17:46 [TRACE] Executing graph transform *terraform.ReferenceTransformer
+2021/01/22 16:17:46 [WARN] no schema is attached to aws_security_grop.fw, so config references cannot be detected
+2021/01/22 16:17:46 [TRACE] statemgr.Filesystem: removing lock metadata file .terraform.tfstate.lock.info
+2021/01/22 16:17:46 [TRACE] statemgr.Filesystem: unlocking terraform.tfstate using fcntl flock
+panic: runtime error: invalid memory address or nil pointer dereference
+[signal SIGSEGV: segmentation violation code=0x1 addr=0x8 pc=0x19871ce]
+
+goroutine 81 [running]:
+github.com/hashicorp/terraform/lang/blocktoattr.walkVariables(0x2f76840, 0xc0006108f0, 0x0, 0xc0000ec001, 0x2f76840, 0xc0006108f0, 0x0, 0x0, 0x0, 0x5d)
+	/opt/teamcity-agent/work/9e329aa031982669/src/github.com/hashicorp/terraform/lang/blocktoattr/variables.go:34 +0x1ae
+github.com/hashicorp/terraform/lang/blocktoattr.ExpandedVariables(...)
+	/opt/teamcity-agent/work/9e329aa031982669/src/github.com/hashicorp/terraform/lang/blocktoattr/variables.go:24
+github.com/hashicorp/terraform/lang.ReferencesInBlock(0x2f76840, 0xc0006108f0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0xc000178080)
+	/opt/teamcity-agent/work/9e329aa031982669/src/github.com/hashicorp/terraform/lang/references.go:68 +0x66
+github.com/hashicorp/terraform/terraform.(*NodeAbstractResource).References(0xc0013a52b0, 0x0, 0x0, 0x0)
+	/opt/teamcity-agent/work/9e329aa031982669/src/github.com/hashicorp/terraform/terraform/node_resource_abstract.go:195 +0x33d
+github.com/hashicorp/terraform/terraform.NewReferenceMap(0xc000851540, 0x13, 0x13, 0x13)
+	/opt/teamcity-agent/work/9e329aa031982669/src/github.com/hashicorp/terraform/terraform/transform_reference.go:492 +0x24a
+github.com/hashicorp/terraform/terraform.(*ReferenceTransformer).Transform(0x411f3b8, 0xc0000eddb0, 0x14, 0x0)
+	/opt/teamcity-agent/work/9e329aa031982669/src/github.com/hashicorp/terraform/terraform/transform_reference.go:79 +0x71
+github.com/hashicorp/terraform/terraform.(*BasicGraphBuilder).Build(0xc000ba98e8, 0x0, 0x0, 0x0, 0x40ff740, 0xc000ba9918, 0x10e28d0, 0xc0000ec000)
+	/opt/teamcity-agent/work/9e329aa031982669/src/github.com/hashicorp/terraform/terraform/graph_builder.go:50 +0x477
+github.com/hashicorp/terraform/terraform.(*PlanGraphBuilder).Build(0xc0001fa0e0, 0x0, 0x0, 0x0, 0x1, 0x2b2d9f0, 0xc00065c601, 0xc000ba9978)
+	/opt/teamcity-agent/work/9e329aa031982669/src/github.com/hashicorp/terraform/terraform/graph_builder_plan.go:65 +0xbc
+github.com/hashicorp/terraform/terraform.(*Context).Graph(0xc0001e6000, 0x6, 0xc000ba996e, 0xc0009f4300, 0x47, 0x14, 0xbffadc8a9295dfa0)
+	/opt/teamcity-agent/work/9e329aa031982669/src/github.com/hashicorp/terraform/terraform/context.go:292 +0x1b8
+github.com/hashicorp/terraform/terraform.(*Context).Validate(0xc0001e6000, 0x0, 0x0, 0x0)
+	/opt/teamcity-agent/work/9e329aa031982669/src/github.com/hashicorp/terraform/terraform/context.go:675 +0xc9
+github.com/hashicorp/terraform/backend/local.(*Local).context(0xc000238f70, 0xc000180000, 0x1, 0x1, 0x2, 0xc0004ca700, 0x1, 0x2, 0x0)
+	/opt/teamcity-agent/work/9e329aa031982669/src/github.com/hashicorp/terraform/backend/local/backend_local.go:120 +0x974
+github.com/hashicorp/terraform/backend/local.(*Local).opPlan(0xc000238f70, 0x2f75ec0, 0xc00044e0c0, 0x2f75ec0, 0xc00044e100, 0xc000180000, 0xc00044e080)
+	/opt/teamcity-agent/work/9e329aa031982669/src/github.com/hashicorp/terraform/backend/local/backend_plan.go:70 +0x2a3
+github.com/hashicorp/terraform/backend/local.(*Local).Operation.func1(0xc0001f0b90, 0xc0001f0ba0, 0xc0001f0bb0, 0xc000180000, 0xc000238f70, 0xc00044e080, 0xc0001f0b80, 0x2f75ec0, 0xc00044e0c0, 0x2f75ec0, ...)
+	/opt/teamcity-agent/work/9e329aa031982669/src/github.com/hashicorp/terraform/backend/local/backend.go:356 +0x135
+created by github.com/hashicorp/terraform/backend/local.(*Local).Operation
+	/opt/teamcity-agent/work/9e329aa031982669/src/github.com/hashicorp/terraform/backend/local/backend.go:340 +0x36b
