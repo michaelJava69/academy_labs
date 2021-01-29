@@ -1,0 +1,25 @@
+resource "aws_instance"  "ec2-mod"  {
+
+   ami = data.aws_ami.ami.id
+   instance_type = var.prod-type
+   availability_zone = var.az
+}
+
+
+resource "aws_iam_user" "iam" {
+   name = var.prod-user
+
+}
+
+resource "aws_vpc" "vpc-test" {
+   cidr_block = var.vpc-prod
+
+}
+
+
+resource "aws_subnet" "sub" {
+
+   cidr_block = var.sub
+   vpc_id = var.vpc-prod
+}
+

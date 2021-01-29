@@ -1,7 +1,3 @@
-output "alb_dns_name" {
-  value       = aws_lb.nlb.dns_name
-  description = "The domain name of the loadbalancer"
-}
 
 
 output "echo" {
@@ -13,6 +9,8 @@ output "echo_foo" {
     value = data.external.echo.result.foo
 }
 
+
+## becuase laoded over by a count expression in resource declaration
 
 output "splat_example_id"  {
 
