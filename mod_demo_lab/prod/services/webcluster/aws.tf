@@ -5,7 +5,7 @@ terraform {
     # manually, uncomment and fill in the config below.
 
      bucket         = "terraform-s3-bucket-state"
-     key            = "stage/webcluster/mod/stage/terraform.tfstate"
+     key            = "stage/webcluster/mod/terraform.tfstate"
      region         = "us-east-2"
      dynamodb_table = "terraform-s3-bucket-state-locks"
      encrypt        = true
@@ -15,15 +15,15 @@ terraform {
 
 ## modules
 
-module "stage-compute"  {
+module "prod-compute"  {
    source = "../../../modules/compute"
 
    ## variable names in the module variable.tf
    image = data.aws_ami.ami.id
-   type = var.stage-type
-   vpc-id =  "${module.stage-network.vpc-id}"
-   vpc-zone-identifier  = ["${module.stage-network.aws_subnet-web1-id}", "${module.stage-network.aws_subnet-web2-id}"]
-   target-group-arns    = ["${module.stage-network.target_group_arn}"] 
+   type = var.prod-type
+   vpc-id =  "${module.prod-network.vpc-id}"
+   vpc-zone-identifier  = ["${module.prod-network.aws_subnet-web1-id}", "${module.prod-network.aws_subnet-web2-id}"]
+   target-group-arns    = ["${module.prod-network.target_group_arn}"] 
 }
 
 /*
@@ -44,14 +44,13 @@ module "prod-iam"  {
 
 
 
-module "stage-network" {
+module "prod-network" {
 
    ## contains vpc and sub network confgis
    source = "../../../modules/network"
-   #sub = var.stage-sub
-   sub = ["${cidrsubnet(var.vpc-stage,8,10)}","${cidrsubnet(var.vpc-stage,8,20)}"]
-   vpc = var.vpc-stage
-   az = var.stage-az 
+   sub = var.prod-sub
+   vpc = var.vpc-prod
+   az = var.prod-az 
 }
 
 ## modules

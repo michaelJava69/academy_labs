@@ -1,24 +1,24 @@
-variable "stage-az" {
-   default = ["us-east-1a", "us-east-1b", "us-east-1c" ]
+variable "prod-az" {
+   default = ["us-east-2a", "us-east-2b", "us-east-2c" ]
 }
 
 
-variable "stage-type" {
+variable "prod-type" {
    default = "t2.micro"
 }
 
-variable "stage-user" {
+variable "prod-user" {
   default = "john"
 }
 
 
-variable "vpc-stage"  {
-  default = "172.40.0.0/16"
+variable "vpc-prod"  {
+  default = "172.30.0.0/16"
 
 }
 
-variable "stage-sub"  {
-  default = ["172.40.10.0/24" ,"172.40.20.0/24"]
+variable "prod-sub"  {
+  default = ["172.30.10.0/24" ,"172.30.20.0/24"]
 
 
 }
