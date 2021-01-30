@@ -1,0 +1,16 @@
+terraform graph | dot -Tsvg > grapgh.svg
+
+
+
+resource  "aws_lb"  "nlb" {
+   name = "tls"
+   load_balancer_type =  network
+   enable_cross_zone_load_balancing = true    ## newtork stuff
+   subnets = [aws_subnet.web1.id, aws_subnet.web2.id]
+}
+
+
+Error: error creating ELBv2 Listener: ValidationError: Listener protocol 'HTTP' must be one of 'TCP, TCP_UDP, TLS, UDP'
+        status code: 400, request id: 47b21fd0-5b84-47eb-ad33-9bd8236d2478
+
+
