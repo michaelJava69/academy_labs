@@ -88,6 +88,7 @@ resource "aws_autoscaling_group" "tfasg" {
   
   # target_group_arns = [aws_lb_target_group.pool.arn] # dont know yet
   target_group_arns = var.target-group-arns  
+  health_check_type = "ELB"
 
   ## give instances names via tag
 

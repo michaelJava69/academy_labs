@@ -23,17 +23,9 @@ module "stage-compute"  {
    type = var.stage-type
    vpc-id =  "${module.stage-network.vpc-id}"
    vpc-zone-identifier  = ["${module.stage-network.aws_subnet-web1-id}", "${module.stage-network.aws_subnet-web2-id}"]
-   target-group-arns    = ["${module.stage-network.target_group_arn}"] 
+   target-group-arns    = ["${module.stage-lb.target_group_arn}"] 
 }
 
-/*
-output "aws_subnet-web1-id"  {
-   value = aws_subnet.web1.id
-}
-output "aws_subnet-web2-id"  {
-   value = aws_subnet.web2.id
-}
-*/
 
 
 module "prod-iam"  {
@@ -53,5 +45,32 @@ module "stage-network" {
    vpc = var.vpc-stage
    az = var.stage-az 
 }
+
+
+/*
+output "aws_subnet-web1-id"  {
+   value = aws_subnet.web1.id
+}
+output "aws_subnet-web2-id"  {
+   value = aws_subnet.web2.id
+}
+
+output "target_group_arn" {
+   value = aws_lb_target_group.pool.arn
+}
+
+*/
+
+
+module "stage-lb" {
+
+   ## contains loadbalancer confgis
+   source = "../../../modules/lb"
+   #sub = var.stage-sub
+   sub = ["${module.stage-network.aws_subnet-web1-id}", "${module.stage-network.aws_subnet-web2-id}"]
+   vpc-id =  "${module.stage-network.vpc-id}"
+    
+}
+
 
 ## modules
