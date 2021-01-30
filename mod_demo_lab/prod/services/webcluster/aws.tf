@@ -23,7 +23,7 @@ module "prod-compute"  {
    type = var.prod-type
    vpc-id =  "${module.prod-network.vpc-id}"
    vpc-zone-identifier  = ["${module.prod-network.aws_subnet-web1-id}", "${module.prod-network.aws_subnet-web2-id}"]
-   target-group-arns    = ["${module.prod-network.target_group_arn}"] 
+   target-group-arns    = ["${module.prod-lb.target_group_arn}"] 
 }
 
 /*
@@ -39,6 +39,17 @@ output "aws_subnet-web2-id"  {
 module "prod-iam"  {
    source = "../../../modules/iam"
 
+
+}
+
+
+module "prod-lb" {
+
+   ## contains loadbalancer confgis
+   source = "../../../modules/lb"
+   #sub = var.stage-sub
+   sub = ["${module.prod-network.aws_subnet-web1-id}", "${module.prod-network.aws_subnet-web2-id}"]
+   vpc-id =  "${module.prod-network.vpc-id}"
 
 }
 
