@@ -19,6 +19,8 @@ module "prod-compute"  {
    source = "../../../modules/compute"
 
    ## variable names in the module variable.tf
+   user-data = var.user-data
+   cluster-name = "prod-stage"
    image = data.aws_ami.ami.id
    type = var.prod-type
    vpc-id =  "${module.prod-network.vpc-id}"

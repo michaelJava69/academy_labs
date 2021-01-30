@@ -1,6 +1,6 @@
 resource "aws_launch_configuration" "awslaunch" {
 
-  name          = "aws_launch"
+  name          = "${var.cluster-name}-aws-launch"
   image_id      =  var.image       
   # "ami-0a0ad6b70e61be944"
   instance_type =  var.type
@@ -14,7 +14,7 @@ resource "aws_launch_configuration" "awslaunch" {
   ##
 
   key_name  = aws_key_pair.ssh.key_name
-  user_data = var.user_data
+  user_data = var.user-data
 
   lifecycle {
        create_before_destroy = true
@@ -72,8 +72,8 @@ resource "aws_security_group" "instance" {
 
 resource "aws_autoscaling_group" "tfasg" {
   name     = "tfasg"
-  max_size = 4
-  min_size = 3
+  max_size = var.max-size
+  min_size = var.min-size
 
   ## need to know type of instance it going to scale
 
@@ -99,3 +99,27 @@ resource "aws_autoscaling_group" "tfasg" {
   }
 }
 
+
+resource "aws_autoscaling_schedule" "scale_out_during_business_hours" {
+  count = var.enable_autoscaling ? 1 : 0
+
+  scheduled_action_name  = "${var.cluster-name}-scale-out-during-business-hours"
+  min_size               = 3
+  max_size               = 10
+  desired_capacity       = 3
+  start_time             = "2021-01-30T16:04:00Z"
+  end_time               = "2021-01-30T16:10:00Z"
+  #recurrence             = "0 16 * * *"
+  autoscaling_group_name = aws_autoscaling_group.tfasg.name
+}
+
+resource "aws_autoscaling_schedule" "scale_in_at_night" {
+  count = var.enable_autoscaling ? 1 : 0
+
+  scheduled_action_name  = "${var.cluster-name}-scale-in-at-night"
+  min_size               = 4
+  max_size               = 10
+  desired_capacity       = 4
+  recurrence             = "0 17 * * *"
+  autoscaling_group_name = aws_autoscaling_group.tfasg.name
+}

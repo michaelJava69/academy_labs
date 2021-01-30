@@ -45,3 +45,20 @@ data "aws_ami" "ami" {
     }
   }
 }
+
+##-------------------------------
+## customize
+## ------------------------------
+
+variable "user_data" {
+  description = "user data for apache script"
+  default     = <<-EOF
+#!/bin/bash
+sudo yum -y update
+sudo yum install -y httpd
+sudo service httpd start
+echo '<!doctype html><html><head><title>CONGRATULATIONS!!..You are on your way to become a Terraform expert!</title><style>body {background-$
+echo "<BR><BR>Terraform autoscaled app multi-cloud lab<BR><BR>" >> /var/www/html/index.html
+EOF
+}
+

@@ -7,6 +7,12 @@ locals {
 
 }
 
+
+
+## -----------------------------------
+##   Required
+## ---------------------------------
+
 variable "az" {
   type = string
   ## if you leave out then this forces a required argument
@@ -29,19 +35,47 @@ variable "image"  {
 }
 
 
-variable "user_data" {
-  description = "user data for apache script"
-  default     = <<-EOF
-#!/bin/bash
-sudo yum -y update
-sudo yum install -y httpd
-sudo service httpd start
-echo '<!doctype html><html><head><title>CONGRATULATIONS!!..You are on your way to become a Terraform expert!</title><style>body {background-color: #1c87c9;}</style></head><body></body></html>' | sudo tee /var/www/html/index.html
-echo "<BR><BR>Terraform autoscaled app multi-cloud lab<BR><BR>" >> /var/www/html/index.html
-EOF
-}
 
 variable "vpc-zone-identifier" {}
 
 variable "target-group-arns" {}
+
+
+
+# ---------------------------------------------------------------------------------------------------------------------
+# OPTIONAL PARAMETERS
+# These parameters have reasonable defaults.
+# ---------------------------------------------------------------------------------------------------------------------
+
+variable "user-data" {
+  description = "The User Data script to run in each Instance at boot"
+  type        = string
+  default     = null
+}
+
+
+variable "cluster-name" {
+   description = "cluster name"
+   type        = string
+   default     = "" 
+
+}
+
+variable "enable_autoscaling" {
+  description = "enable change in autoscale"
+  type = bool
+  default =  false
+}
+
+variable "min-size"{
+  description = "asg min size"
+  default     = 2
+  
+}
+
+variable "max-size"{
+  description = "asg max size"
+  default     = 2
+
+}
 

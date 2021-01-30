@@ -19,11 +19,18 @@ module "stage-compute"  {
    source = "../../../modules/compute"
 
    ## variable names in the module variable.tf
+   cluster-name = "stage-cluster"
    image = data.aws_ami.ami.id
    type = var.stage-type
    vpc-id =  "${module.stage-network.vpc-id}"
    vpc-zone-identifier  = ["${module.stage-network.aws_subnet-web1-id}", "${module.stage-network.aws_subnet-web2-id}"]
-   target-group-arns    = ["${module.stage-lb.target_group_arn}"] 
+   target-group-arns    = ["${module.stage-lb.target_group_arn}"]
+   user-data            = var.user_data
+
+   min-size             = 1
+   max-size             = 1
+   enable_autoscaling   = true
+  
 }
 
 
