@@ -26,6 +26,10 @@ module "prod-compute"  {
    vpc-id =  "${module.prod-network.vpc-id}"
    vpc-zone-identifier  = ["${module.prod-network.aws_subnet-web1-id}", "${module.prod-network.aws_subnet-web2-id}"]
    target-group-arns    = ["${module.prod-lb.target_group_arn}"] 
+
+   min-size             = 1
+   max-size             = 1
+   enable_autoscaling   = true
 }
 
 /*
